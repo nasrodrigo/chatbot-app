@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Chat Cheff",
+    "slug": "chat-cheff",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Chat Cheff uses the camera to attach photos and videos to messages.",
+        "NSMicrophoneUsageDescription": "Chat Cheff uses the microphone to record voice notes and videos.",
+        "NSPhotoLibraryUsageDescription": "Chat Cheff lets you attach photos and videos from your library."
+      }
+    },
+    "android": {
+      "usesCleartextTraffic": true,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-audio",
+      "expo-font",
+      "expo-asset"
+    ]
+  }
+}
