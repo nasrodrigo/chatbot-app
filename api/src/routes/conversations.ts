@@ -58,9 +58,6 @@ export function createConversationsRouter(store: ConversationStore): Router {
 
   router.post('/:id/messages', async (req, res) => {
     const { id } = idParams.parse(req.params)
-    console.log(req.body);
-    const test = JSON.stringify(req.body.attachments[0])
-    console.log(test);
     const input = createMessageInput.parse(req.body)
     const conversation = await store.addMessage(id, input)
     if (!conversation) throw conversationNotFound(id)

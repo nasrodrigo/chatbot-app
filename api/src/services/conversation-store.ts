@@ -61,7 +61,6 @@ export function createInMemoryConversationStore(): ConversationStore {
     },
 
     async addMessage(id, input) {
-      console.log(input)
       const conversation = conversations.get(id)
       if (!conversation) {
         return undefined
@@ -74,12 +73,12 @@ export function createInMemoryConversationStore(): ConversationStore {
         id: randomUUID(),
         role: 'user',
         content: inputContent.text,
-        attachments: inputContent.attachments?.map((a: any) => ({ data: a.data, type: a.type })),
+        attachments: inputContent.attachments?.map((a: any) => ({ data: a.data, type: a.type, mimeType: a.mimeType, source_type: a.source_type })),
         createdAt: now,
       }
       const assistantContent = await chat({
-        text: inputContent.content,
-        attachments: inputContent.attachments.map((a: any) => ({ data: a.data, type: a.type })),
+        text: inputContent.text,
+        attachments: inputContent.attachments?.map((a: any) => ({ data: a.data, type: a.type, mimeType: a.mimeType, source_type: a.source_type })),
       })
       const assistantMessage: ChatMessage = {
         id: randomUUID(),

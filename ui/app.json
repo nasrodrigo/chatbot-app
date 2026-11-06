@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Chat Cheff",
-    "slug": "chat-cheff",
+    "name": "ChatBot App",
+    "slug": "chatbot-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,9 +9,9 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSCameraUsageDescription": "Chat Cheff uses the camera to attach photos and videos to messages.",
-        "NSMicrophoneUsageDescription": "Chat Cheff uses the microphone to record voice notes and videos.",
-        "NSPhotoLibraryUsageDescription": "Chat Cheff lets you attach photos and videos from your library."
+        "NSCameraUsageDescription": "ChatBot App uses the camera to attach photos and videos to messages.",
+        "NSMicrophoneUsageDescription": "ChatBot App uses the microphone to record voice notes and videos.",
+        "NSPhotoLibraryUsageDescription": "ChatBot App lets you attach photos and videos from your library."
       }
     },
     "android": {
