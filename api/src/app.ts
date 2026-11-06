@@ -26,7 +26,7 @@ export function createApp({ config, logger }: AppDeps): Express {
     app.use(cors({ origin: origins }))
   }
   app.use(requestContext(logger))
-  app.use(express.json({ limit: '100kb' }))
+  app.use(express.json({ limit: '10mb' }))
 
   app.use(healthRouter)
   app.use('/api/v1', createApiRouter())

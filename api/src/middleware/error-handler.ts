@@ -35,7 +35,7 @@ export function createErrorHandler({ logger, exposeErrors }: Options): ErrorRequ
       status = 400
       code = 'validation_error'
       message = 'Request validation failed'
-      details = err.issues.map((issue) => (console.log(issue), {
+      details = err.issues.map((issue) => ({
         path: issue.path.map(String).join('.'),
         message: issue.message,
       }))

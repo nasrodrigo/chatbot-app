@@ -65,16 +65,19 @@ const formatDraft = async (draft: ChatDraft) => {
   const attachments = draft.attachments.map(attachment => attachment).filter(Boolean);
   const payload: {
     text?: string;
-    attachments?: Array<{ data: string | FormData; type: string }>;
+    attachments?: Array<{ data: string; type: string; mimeType: string | null | undefined; source_type: string }>;
   } = {};
 
   payload.text = draft.text;
   if (attachments.length) {
     payload.attachments = await Promise.all(attachments.map( async attachment => {
-      const base64 = await new File(attachment.uri).base64();
+      const image = new File(attachment.uri)
+      const base64 = await image.base64();
       return {
         data: base64,
         type: attachment.kind,
+        mimeType: attachment.mimeType,
+        source_type: "base64",
       };
     }));
   }
@@ -107,9 +110,6 @@ export const runChatAgent = async (
     `/conversations/${activeConversationId}/messages`,
     {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/octet-stream',
-      },
       body: await formatDraft(draft),
     },
   );

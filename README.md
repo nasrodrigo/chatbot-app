@@ -100,7 +100,7 @@ EXPO_PUBLIC_API_URL=http://YOUR_COMPUTER_LAN_IP:3000
 Restart Expo after changing the environment file. On Windows, allow inbound traffic to the API port if the device cannot connect:
 
 ```powershell
-New-NetFirewallRule -DisplayName "Chat Cheff API" -Direction Inbound -Protocol TCP -LocalPort 3000 -Action Allow
+New-NetFirewallRule -DisplayName "ChatBot API" -Direction Inbound -Protocol TCP -LocalPort 3000 -Action Allow
 ```
 
 Use the computer's LAN IP rather than `localhost` when running on a physical device.
